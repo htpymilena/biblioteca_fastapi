@@ -1,12 +1,12 @@
+version: '3.8'
+
 services:
   fastapi:
     build: .
     container_name: fastapi_aula
-    
     ports:
       - "8030:8030"
-    
     volumes:
       - .:/app
-
+      - ./data:/data  # <--- Bind mount: mapeia a pasta local ./data para /data no contêiner
     restart: always

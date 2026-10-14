@@ -12,7 +12,8 @@ def buscar_livro(id: int, db: Session):
 def adicionar_livro(livro: LivroCreate, db: Session):
     novo_livro = LivroModel(
         titulo = livro.titulo,
-        autor = livro.autor
+        autor = livro.autor,
+        ano_publicacao = livro.ano_publicacao,
     )
 
     db.add(novo_livro)
